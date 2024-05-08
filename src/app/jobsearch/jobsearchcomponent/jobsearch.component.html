@@ -1,0 +1,38 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        <button class="tablinks" (click)="Jobtab()">JOBS</button>
+      </th>
+      <th>
+        <button class="tablinks" (click)="Favoratetab()">FAVORITES</button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="Job" class="tabcontent" *ngIf="isShow==true">
+      <tr *ngFor="let cmpData of companyData">
+        <td>
+          <input type="image" src="{{cmpData.companyLogo}}" alt="Submit" width="60">
+
+          <input class="details-button" [routerLink]="['/Companys', cmpData.id]" value="{{cmpData.title}}"
+            type="button">
+          <button class="fa fa-star-o" aria-hidden="true" (click)="AddFavoritems(cmpData)" type="submit">
+          </button>
+        </td>
+      </tr>
+    </div>
+    <div id="Fav" style="margin: 60px;" class="tabcontent" *ngIf="isShow==false">
+      <tr *ngFor="let obj of addFav;let i=index">
+        <td>
+          <input type="image" src="{{obj.companyLogo}}" alt="Submit" width="60">
+          <input class="details-button" [routerLink]="['/Companys', obj.id]" value="{{obj.title}}" type="button">
+          <button class="fa fa-star-o" aria-hidden="true" (click)="DeleteFavoritems(i)" type="submit">
+          </button>
+        </td>
+    </div>
+  </tbody>
+</table>
+
+
+

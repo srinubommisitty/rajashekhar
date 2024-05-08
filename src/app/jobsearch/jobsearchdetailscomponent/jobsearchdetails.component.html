@@ -1,0 +1,54 @@
+
+<div class="grid-container" *ngIf="companyDetails">
+    <div class="grid-item"></div>
+    <div class="grid-container-in">
+        <div class="grid-item">
+                <div class="grid-item">
+                <button [routerLink]="['/Companys']" class="btn details-button">
+                    <span class="icon-home"></span>Back
+                </button>                
+                </div>
+                <div class="grid-item">
+                    <h2>{{companyDetails.title}}</h2>
+                </div>
+                <div class="grid-item">
+                    <table class="table-noborder">
+                        <tr>
+                            <td style="flex-grow: 2">
+                                <input type="image" src="{{companyDetails.companyLogo}}" alt="Submit"
+                                height="auto" width="180px">
+                            </td>
+                            <td style="flex-grow: 8">
+                                <div innerHTML="{{companyDetails.description}}"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="grid-item">
+                <h4 class="details">Details</h4>
+                </div>
+                <div class="grid-item">
+                    <table class="detailsTable">
+                        <tr>
+                            <td class="detailsCol">location</td>
+                            <td class="detailsCol2" colspan="2">{{companyDetails.location}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailsCol">reference</td>
+                            <td class="detailsCol2">{{companyDetails.reference}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailsCol">types</td>
+                            <td class="detailsCol2">{{companyDetails.industries}}</td>
+                        </tr>
+                        <tr>
+                            <td class="detailsCol">publishDate</td>
+                            <td class="detailsCol2">{{companyDetails.publishDate}}</td>
+                        </tr>
+                       
+                    </table>
+                </div>
+        </div>
+    </div>
+    <div class="grid-item"></div>
+</div>
