@@ -34,7 +34,7 @@ export class JobsearchComponent implements OnInit {
     })).subscribe();
 
   }
-  AddFavoritems(cmpData: any) {
+  AddFavoritems(cmpData: Companys) {
     if (this.addFav.length == 0) {
       this.addFav.push(cmpData);
 

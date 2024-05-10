@@ -13,8 +13,8 @@
     <div id="Job" class="tabcontent" *ngIf="isShow==true">
       <tr *ngFor="let cmpData of companyData">
         <td>
-          <input type="image" src="{{cmpData.companyLogo}}" alt="Submit" width="60">
-
+          <input type="image" src="{{cmpData.companyLogo}}" alt="Submit" width="60" top left="20px">
+          {{cmpData.reference}}
           <input class="details-button" [routerLink]="['/Companys', cmpData.id]" value="{{cmpData.title}}"
             type="button">
           <button class="fa fa-star-o" aria-hidden="true" (click)="AddFavoritems(cmpData)" type="submit">
@@ -33,6 +33,3 @@
     </div>
   </tbody>
 </table>
-
-
-
